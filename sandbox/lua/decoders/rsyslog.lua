@@ -105,6 +105,12 @@ function process_message ()
     msg.Payload = fields.msg
     fields.msg = nil
 
+    local sd = fields["structured-data"]
+    if sd and type(sd) == "table" then
+        for k, v in pairs(sd) do fields[k] = v end
+        fields["structured-data"] = nil
+    end
+
     msg.Fields = fields
     if not pcall(inject_message, msg) then return -1 end
     return 0
