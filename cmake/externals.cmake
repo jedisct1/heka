@@ -18,8 +18,8 @@ if(INCLUDE_SANDBOX)
     set(SANDBOX_ARGS -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE} -DCMAKE_INSTALL_PREFIX=${PROJECT_PATH} -DLUA_JIT=off --no-warn-unused-cli)
     externalproject_add(
         ${SANDBOX_PACKAGE}
-        GIT_REPOSITORY https://github.com/mozilla-services/lua_sandbox.git
-        GIT_TAG 82ae00d85f3111ee77bf15dbcb97264f177a66ec
+        GIT_REPOSITORY https://github.com/jedisct1/lua_sandbox.git
+        GIT_TAG rfc5424-sd
         CMAKE_ARGS ${SANDBOX_ARGS}
         INSTALL_DIR ${PROJECT_PATH}
     )
